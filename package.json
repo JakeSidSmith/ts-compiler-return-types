@@ -1,0 +1,30 @@
+{
+  "name": "ts-compiler-return-types",
+  "version": "0.0.0",
+  "description": "TypeScript compiler API return types",
+  "main": "src/find-types.ts",
+  "scripts": {
+    "build": "rm -rf build && tsc --project tsconfig.json --declaration --outDir build",
+    "test": "npm run build && node build/find-types.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jakesidsmith/ts-compiler-return-types.git"
+  },
+  "keywords": [
+    "typescript",
+    "compiler",
+    "api",
+    "types"
+  ],
+  "author": "Jake 'Sid' Smith",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jakesidsmith/ts-compiler-return-types/issues"
+  },
+  "homepage": "https://github.com/jakesidsmith/ts-compiler-return-types#readme",
+  "dependencies": {
+    "@types/node": "^11.13.4",
+    "typescript": "^3.4.3"
+  }
+}
