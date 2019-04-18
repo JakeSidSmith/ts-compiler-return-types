@@ -41,7 +41,8 @@ const traverse = (node: ts.Node, checker: ts.TypeChecker) => {
 };
 
 function getReturnTypes() {
-  const compilerOptions = require(path.join(process.cwd(), 'tsconfig.json'));
+  const json = ts.readConfigFile(path.join(process.cwd(), 'tsconfig.json'), ts.sys.readFile);
+  const compilerOptions = ts.parseJsonConfigFileContent(json.config, ts.sys, process.cwd()).options;
   const sourceFileNames = [path.resolve(process.cwd(), 'src/example.ts')];
   const program = ts.createProgram(sourceFileNames, compilerOptions);
   const sourceFiles = program.getSourceFiles();
